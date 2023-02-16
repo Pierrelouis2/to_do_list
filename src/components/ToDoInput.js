@@ -1,21 +1,21 @@
 import React, {useState} from "react";
 
 function ToDoInput(props) {
-  const [input, setInput] = useState("");
-  const [priority, setPriority] = useState(0);
-  const [description, setDescription] = useState("");
+  const [input, setInput] = useState(""); // input is the value of the input field
+  const [priority, setPriority] = useState(0);// priority is the value of the priority field
+  const [description, setDescription] = useState("");// description is the value of the description field
 
   const handleChange = (e) => {
     setInput(e.target.value);
-  };
+  };// handleChange is the function that will be called when the input field is changed
 
   const handlePriorityChange = (e) => {
     setPriority(e.target.value);
-  };
+  };// handlePriorityChange is the function that will be called when the priority field is changed
 
   const handleDescriptionChange = (e) => {
     setDescription(e.target.value);
-  };
+  };//  handleDescriptionChange is the function that will be called when the description field is changed
   const handleSubmit = (e) => {
     e.preventDefault();
     const newTodo = {
@@ -23,17 +23,17 @@ function ToDoInput(props) {
       text: input,
       priority: priority,
       description: description,
-    };
+    };// newTodo is the object that will be added to the list of todos
 
     
-    props.onSubmit(newTodo);
-    setInput("");
-    setPriority(0);
+    props.onSubmit(newTodo); // Call the function that was passed as a prop to this component
+    setInput(""); // Reset the input field
+    setPriority(0);// Reset the priority field
 
-    const existingTodos = JSON.parse(localStorage.getItem("todos")) || [];
+    const existingTodos = JSON.parse(localStorage.getItem("todos")) || [];// Get existing todos from local storage
 
     // Add new todo to existing todos
-    existingTodos.push(newTodo);
+    existingTodos.push(newTodo); 
 
     // Save updated todos to local storage
     localStorage.setItem("todos", JSON.stringify(existingTodos));
