@@ -46,6 +46,22 @@ h1 {
   color: #fff;
 }
 
+.todo-priority {
+  padding: 14px 32px 14px 16px;
+  border-radius: 0 4px 4px 0;
+  border: 2px solid #5d0cff;
+  outline: none;
+  width: 100px;
+  background: transparent;
+  color: #fff;
+  margin: auto 3px;
+}
+
+.todo-priority::placeholder {
+  font-size: 10px;
+  
+}
+
 .todo-button {
   padding: 16px;
   border: none;
@@ -94,4 +110,33 @@ h1 {
 .delete-icon {
   margin-right: 5px;
   color: #fff;
+}
+
+
+.todo-description-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px auto;
+  color: #fff;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 118, 20, 1) 0%,
+    rgba(255, 84, 17, 1) 100%
+  );
+
+  padding: 16px;
+  border-radius: 5px;
+  width: 90%;
+}
+
+.todo-description{
+  padding: 14px 32px 14px 16px;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid #5d0cff;
+  outline: none;
+  width: 320px;
+  background: transparent;
+  color: #fff;
+  margin: 6px auto;
 }
